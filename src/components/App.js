@@ -5,27 +5,35 @@ import {
   Link
 } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
+import Home from "../WEB PAGES/Home";
+import Bulletin from "../WEB PAGES/Bulletin";
+import FriendsList from "../WEB PAGES/FriendsList";
+import FAQ from "../WEB PAGES/FAQ";
+import Profile from "../WEB PAGES/Profile";
+import SignUp from "../WEB PAGES/SignUp";
+
 
 
 function App() {
   return (
     <div>
-      {/* <Switch>
+      <Navbar />
+      <Switch>
         <Route path = '/' exact component = { Home } />
         <Route path = '/bulletin' component = { Bulletin } />
-        <Route path = '/freindslist' component = { FriendList } />
+        <Route path = '/FriendsList' component = { FriendsList } />
         <Route path = '/faq' component = { FAQ } />
         <Route path = '/profile' component = { Profile } />
         <Route path = '/signup' component = { SignUp } />
-      </Switch> */}
+      </Switch>
 
-      <Navbar />
+      
       {/* <SignIn />
       <Register />
-      <FriendList />
+      <FriendsList />
       <CreateBulletin />
       <Bulletin />
-      <CompleteFriendList />
+      <CompleteFriendsist />
       <PendingFriendsList />
       <SiteRules />
       <Contact />

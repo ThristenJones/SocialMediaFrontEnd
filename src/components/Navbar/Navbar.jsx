@@ -11,7 +11,7 @@ function Navbar() {
                 <Link to = '/bulletin'>
                     <li>Bulletin</li>
                 </Link>
-                <Link to = '/freindslist'>
+                <Link to = '/friendslist'>
                     <li>Freinds List</li>
                 </Link>
                 <Link to = '/faq'>
