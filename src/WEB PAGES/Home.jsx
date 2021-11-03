@@ -1,34 +1,47 @@
 import React from "react";
-import { Form, Button } from 'react-bootstrap';
-import Login from'../components/Login/login';
+import { Form, Button, Image, Container, Row, Col } from 'react-bootstrap';
 
 function Home() {
     return (
         <div>
-            <Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
-<Login />
+          <Container>
+            <Row>
+              <Col></Col>
+              <Col>
+                <Image src="https://i.ibb.co/tbcKqwy/Toonie-Face-Header.png"
+                width= "4000"
+                fluid />
+              </Col>
+              <Col></Col>
+            </Row>
+          </Container>
+          <Container>
+            <Row>
+              <Col></Col>
+              <Col>
+                <Form>
+                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Text className="text-muted">
+                      We'll never share your email with anyone else.
+                    </Form.Text>
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password" />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="Check me out" />
+                  </Form.Group>
+                  <Button variant="primary" type="submit">
+                    Submit
+                  </Button>
+              </Form>
+              </Col>
+              <Col></Col>
+              </Row>
+        </Container>
         </div>
     );
-    
 }
-
-export default Home;
