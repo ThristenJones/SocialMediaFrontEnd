@@ -8,9 +8,8 @@ function NavBar() {
 
     return(
         <nav>
-            <Navbar bg="dark">
-                    <Container>
-             
+            <Navbar  bg="dark">
+                <Container >
                     <Navbar.Brand href="#home">
                         <img
                         src="https://i.ibb.co/82D1fnX/Toonie-Face-Logo.png"                        
@@ -53,8 +52,8 @@ function NavBar() {
                         </Link>
                 
                     </ul>
-                    </Container>
-                    </Navbar>
+                </Container>
+            </Navbar>
            
         </nav>
     );
