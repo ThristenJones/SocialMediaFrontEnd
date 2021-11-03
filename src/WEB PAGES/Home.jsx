@@ -1,10 +1,12 @@
 import React from "react";
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Row, Col, Container } from 'react-bootstrap';
 
 function Home() {
     return (
         <div>
-            <Form>
+        <Container fluid="md">
+  <Row>
+    <Col>          <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control type="email" placeholder="Enter email" />
@@ -23,7 +25,11 @@ function Home() {
   <Button variant="primary" type="submit">
     Submit
   </Button>
-</Form>
+</Form></Col>
+  </Row>
+</Container>
+       
+  
         </div>
     );
 }
