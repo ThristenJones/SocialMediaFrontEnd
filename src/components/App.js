@@ -1,10 +1,8 @@
 import {
-  BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-import Navbar from "./Navbar/Navbar";
+import NavBar from "./Navbar/Navbar";
 import Home from "../WEB PAGES/Home";
 import Bulletin from "../WEB PAGES/Bulletin";
 import FriendsList from "../WEB PAGES/FriendsList";
@@ -14,10 +12,11 @@ import SignUp from "../WEB PAGES/SignUp";
 
 
 
+
 function App() {
   return (
     <div>
-      <Navbar />
+      <NavBar />
       <Switch>
         <Route path = '/' exact component = { Home } />
         <Route path = '/bulletin' component = { Bulletin } />
