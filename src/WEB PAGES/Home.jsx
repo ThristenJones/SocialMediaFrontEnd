@@ -1,5 +1,6 @@
 import React from "react";
 import { Form, Button } from 'react-bootstrap';
+import Login from'../components/Login/login';
 
 function Home() {
     return (
@@ -24,8 +25,10 @@ function Home() {
     Submit
   </Button>
 </Form>
+<Login />
         </div>
     );
+    
 }
 
 export default Home;
