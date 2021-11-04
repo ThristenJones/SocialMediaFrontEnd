@@ -3,7 +3,7 @@ import {
   Route
 } from "react-router-dom";
 import NavBar from "./Navbar/Navbar";
-import Home from "../WEB PAGES/Home";
+import Login from "../WEB PAGES/Login";
 import Bulletin from "../WEB PAGES/Bulletin";
 import FriendsList from "../WEB PAGES/FriendsList";
 import FAQ from "../WEB PAGES/FAQ";
@@ -18,7 +18,7 @@ function App() {
     <div>
       <NavBar />
       <Switch>
-        <Route path = '/' exact component = { Home } />
+        <Route path = '/' exact component = { Login } />
         <Route path = '/bulletin' component = { Bulletin } />
         <Route path = '/FriendsList' component = { FriendsList } />
         <Route path = '/faq' component = { FAQ } />

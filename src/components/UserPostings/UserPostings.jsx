@@ -1,9 +1,24 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import {
     Card, Button
 } from 'react-bootstrap'
 
 
-function UserPostings() {
+const  UserPostings = () => {
+    const [posts, setPost] = useState([]);
+
+
+    useEffect(() =>{
+        axios.get(`http://localhost:5000/api/post/Bunny`)
+        .then(response => setPost(response.data))
+    })
+
+
+
+    const handleClick = id =>  {
+        axios.delete(`http://localhost:5000/api/post/${id}`);
+    }
 
     return(
         <Card>
@@ -13,8 +28,26 @@ function UserPostings() {
     {/****** LOGIC FOR USERS POST ******/}
             <Card.Title>Post Subject</Card.Title>
             <Card.Text>
-            "Cash rules everything around me C.R.E.A.M., get the money Dollar dollar bill, y'all Cash rules everything around me C.R.E.A.M., get the money Dollar dollar bill, y'all" -WuTang Clan.           </Card.Text>
-            <Button variant="danger">Delete Post</Button>
+                <div>
+                    <ul>
+                        {posts && posts.map((post) => {
+                            return(
+                                <li key={post.id}>
+                                    {post.name}
+                                    <br></br>
+                                    {post.text}
+                                    <br></br>
+                                    Likes {post.likes}
+                                    <br></br>
+                                    <Button variant="danger" type= "delete" onClick={() => handleClick(post.id)}>Delete Post</Button>
+                                    <hr></hr>     
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+           </Card.Text>
+            
         </Card.Body>
         </Card>
     );
