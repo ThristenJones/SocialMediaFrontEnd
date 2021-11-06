@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { Form, Button, Image, Container, Row, Col } from 'react-bootstrap';
+import { Route, useHistory } from "react-router-dom"
+import Profile from "./Profile";
 
 function Login() {
+  const history = useHistory();
   const [email, setEmail] = useState('');
     const [password, setPassword] = useState ('');
 
@@ -14,15 +17,23 @@ function Login() {
         setPassword(event.target.value);
     };
 
-    const handleSubmit =(event)=>{
+    // const handleClick=() =>{
+    //   history.push("/profile")
+    // }
+
+    const handleSubmit = async(event)=>{
         event.preventDefault();
         const user={
             email: email,
             password: password
            }
-           axios.post(`http://localhost:5000/api/auth/`, user)
+           await axios.post(`http://localhost:5000/api/auth/`, user)
            .then(response => localStorage.setItem('token', response.data))
+           history.push(`/profile`)
+          //  .then(console.log(user))
         };  
+
+      
 
     return (
         <div>
@@ -56,7 +67,7 @@ function Login() {
                   <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                   </Form.Group>
-                  <Button variant="primary" type="submit">
+                  <Button variant="primary" type="submit" >
                     Submit
                   </Button>
               </Form>

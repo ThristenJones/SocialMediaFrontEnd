@@ -5,6 +5,10 @@ import ProfilePic from '../ProfilePic/ProfilePic';
 
 function Bio() {
 
+    const handleClick = id =>  {
+        const jwt = localStorage.removeItem('token');
+    }
+
     return(
         <Card style={{ width: '18rem' }}>
             <ProfilePic />
@@ -21,7 +25,7 @@ function Bio() {
                 <ListGroupItem>Age:</ListGroupItem>
                 <ListGroupItem>City:</ListGroupItem>
     {/*********** LOG OUT LOGIC GOES HERE ***********/}
-                <Button>Log Out</Button>
+                <Button onClick = {handleClick}>Log Out</Button>
             </ListGroup>
         </Card>
         

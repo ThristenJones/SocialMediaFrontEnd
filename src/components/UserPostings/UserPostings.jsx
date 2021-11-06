@@ -5,15 +5,20 @@ import {
 } from 'react-bootstrap'
 
 
-const  UserPostings = () => {
+const  UserPostings = (props) => {
     const [posts, setPost] = useState([]);
+    const jwt = localStorage.getItem('token');
 
+    console.log(props.user)
 
     useEffect(() =>{
-        axios.get(`http://localhost:5000/api/post/Bunny`)
-        .then(response => setPost(response.data))
-    })
-
+        console.log(props.user.name);
+        axios.get(`http://localhost:5000/api/post/${props.user.name}`)
+        .then(response => { 
+            setPost(response.data);
+            console.log(response.data);
+        })
+    },[props.user])
 
 
     const handleClick = id =>  {

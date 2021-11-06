@@ -9,6 +9,7 @@ import Login from "../WEB PAGES/Login";
 import Profile from "../WEB PAGES/Profile";
 import SignUp from "../WEB PAGES/SignUp";
 import jwt_decode from "jwt-decode";
+import LandingScreen from '../WEB PAGES/LandingScreen';
 
 
 
@@ -17,29 +18,30 @@ function App() {
   const [user, setUser] = useState()
   const jwt = localStorage.getItem('token');
     useEffect(() => {
-      console.log(jwt)
       try{
         const user = jwt_decode(jwt);
         setUser(user)
-        console.log(user)
+        console.log(user.name)
       }catch{
     }
   },[jwt])
+
   return (
     <div>
-      <NavBar user = {user} />
+      <NavBar user ={user} />
         <Switch>
           <Route path = '/profile' 
-          render = {props => {
+          render = {(props) => {
             if(!user){
-              return <Redirect to="/" />;
+              return <Redirect to = "/login" />;
             }else {
-              return<Profile {...props} user = {user} />swich this around with if
+              return<Profile {...props} user ={user} />
             }
           }}
           />
-            <Route path = '/' exact component = { Login } />
-            <Route path = '/signup' component = { SignUp } />           
+            <Route path = '/' exact component = { LandingScreen } />
+            <Route path = '/signup' component = { SignUp } /> 
+            <Route path = '/login' component = {Login} />         
         </Switch>
    </div>
   )

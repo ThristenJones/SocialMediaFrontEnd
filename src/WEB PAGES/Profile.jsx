@@ -3,15 +3,17 @@ import { Container, Row, Col } from "react-bootstrap";
 import Bio from "../components/Bio/Bio";
 import UserPostings from "../components/UserPostings/UserPostings";
 
-const Profile = () => {
-    const [userId, setUserId] = useState ('617b2963e24f185f80a76ca7');
+const Profile = (props) => {
+    const [user, setUser] = useState (props.user);
+    const [userId, setUserId] = useState (props.user.id);
+    const [like, setLike] = useState()
 
     return (
         <div>
             <Container>
             <Row>
                 <Col><Bio /></Col>
-                <Col xs= {6} md= {8}><UserPostings/></Col>
+                <Col xs= {6} md= {8}><UserPostings user = {user} /></Col>
                 <Col></Col>
     
             </Row>
