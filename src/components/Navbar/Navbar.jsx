@@ -1,10 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar, Container, Button } from "react-bootstrap";
+import { Link, useHistory } from "react-router-dom";
+import { Navbar, Container, Button, } from "react-bootstrap";
 require("./Navbar.css");
 
 const NavBar = ({ user }) => {
-  return (
+    
+    const handleClick = id =>  {
+        const jwt = localStorage.removeItem('token');
+    }
+
+    return (
     <nav>
       <Navbar bg="dark">
         <Container>
@@ -42,7 +47,9 @@ const NavBar = ({ user }) => {
                     </Link>
                   </li>
                 <li>
-                  <Link to="/logout"> logout </Link>
+                  <Link to="/login">  
+                  <Button variant="light" onClick = {handleClick}>Logout</Button>{" "}
+                  </Link>
                 </li>
                 </React.Fragment>
               )}

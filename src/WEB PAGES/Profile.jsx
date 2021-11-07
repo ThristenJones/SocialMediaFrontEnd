@@ -12,7 +12,7 @@ const Profile = (props) => {
         <div>
             <Container>
             <Row>
-                <Col><Bio /></Col>
+                <Col><Bio user = {user}/></Col>
                 <Col xs= {6} md= {8}><UserPostings user = {user} /></Col>
                 <Col></Col>
     
