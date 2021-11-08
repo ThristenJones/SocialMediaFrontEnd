@@ -5,9 +5,10 @@ require("./Navbar.css");
 
 const NavBar = ({ user }) => {
     
-    const handleClick = id =>  {
-        const jwt = localStorage.removeItem('token');
-    }
+  const handleClick = id =>  {
+    const jwt = localStorage.removeItem('token')
+    window.location.reload(false);
+}
 
     return (
     <nav>
