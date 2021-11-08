@@ -23,7 +23,7 @@ const NavBar = ({ user }) => {
             />
           </Navbar.Brand>
           <div>
-            {user && <h4>Welcome {user.name}</h4>}
+            {user && <h4 class = "text-primary" >Welcome {user.name}</h4>}
             <ul>
               {!user && (
                 <React.Fragment>
